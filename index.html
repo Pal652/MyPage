@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sebestyén Pál – Portfolio (Részletes projektek)</title>
+  <meta name="description" content="Részletes projektleírások, amelyek nem fértek el az önéletrajzban: AI/ML, számítógépes látás, idősortanulás, ROS2 drónvezérlés, webappok és egyéb fejlesztések." />
+  <style>
+    :root{
+      --bg: #0b0e14;
+      --card: #121826;
+      --text: #e6edf3;
+      --muted: #9aa4b2;
+      --accent: #7cacf8;
+      --chip: #1e293b;
+      --border: #1f2a3a;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky;top:0;z-index:10;background:linear-gradient(180deg, rgba(11,14,20,.95), rgba(11,14,20,.85));
+      backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--border)
+    }
+    .wrap{max-width:1050px;margin:0 auto;padding:20px}
+    .mast{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .identity{display:flex;gap:16px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2f3b52,#1a2233);border:1px solid var(--border)}
+    h1{font-size:1.5rem;margin:0}
+    .subtitle{color:var(--muted);margin-top:2px}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{padding:8px 12px;background:var(--chip);border:1px solid var(--border);border-radius:999px}
+
+    .hero{padding:24px 0 8px}
+    .hero p{margin:.4rem 0;color:var(--muted)}
+
+    section{padding:28px 0;border-top:1px solid var(--border)}
+    section h2{font-size:1.2rem;margin:0 0 14px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.mast{flex-direction:column;align-items:flex-start}.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .card h3{margin:.2rem 0;font-size:1.05rem}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{font-size:.8rem;color:var(--muted);background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:4px 8px}
+    .trio{display:grid;gap:8px}
+    .trio p{margin:0}
+    .label{font-weight:600;color:#c8d3e0}
+    details{background:rgba(255,255,255,.02);border:1px dashed var(--border);border-radius:12px;padding:8px 10px}
+    details summary{cursor:pointer;color:var(--accent)}
+
+    .note{color:var(--muted);font-size:.9rem}
+    footer{padding:40px 0;color:var(--muted)}
+    .small{font-size:.85rem}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap mast">
+    <div class="identity">
+      <div class="avatar" aria-hidden="true"></div>
+      <div>
+        <h1>Sebestyén Pál — Részletes projektek</h1>
+        <div class="subtitle">AI/ML · Számítógépes látás · Idősorok · ROS2 · Webfejlesztés · Unity</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#top-projektek">Top projektek</a>
+      <a href="#tovabbiak">Továbbiak</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="small">Ez az oldal azokat a részleteket tartalmazza, amelyek nem fértek el az önéletrajzban. Minden projekt három pontban jelenik meg: <strong>Mit</strong>, <strong>Hogyan</strong>, <strong>Jövőbeli fejlesztések</strong>.</p>
+  </section>
+
+  <section id="top-projektek">
+    <h2>Top projektek</h2>
+    <div class="grid">
+
+      <!-- Glucose prediction -->
+      <article class="card">
+        <h3>Glükózszint előrejelzése (diabétesz)</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">DL</span><span class="chip">CNN</span><span class="chip">BiLSTM</span><span class="chip">Idősor</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> 30 perces előrejelzés diabéteszes betegek glükózszintjére.</p>
+          <p><span class="label">Hogyan:</span> CNN–Bidirectional LSTM hibrid, kiterjedt kísérletek (transzformerek, attention, HPO), <strong>93,7% pontosság</strong>.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Külső jelek (étkezés, inzulin, aktivitás) integrálása klinikai használathoz.</p>
+        </div>
+      </article>
+
+      <!-- Brain MRI -->
+      <article class="card">
+        <h3>Agyműtéti (MRI) képosztályozás</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">CNN</span><span class="chip">Képfeldolgozás</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> MRI képek osztályozása több daganattípusra.</p>
+          <p><span class="label">Hogyan:</span> Előfeldolgozás (kivágás, hisztogram-kiegyenlítés, blur), hierarchikus dupla CNN, <strong>93,5% pontosság</strong>.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Transfer learning, nagyobb adatbázis, klinikai döntéstámogatás.</p>
+        </div>
+      </article>
+
+      <!-- Stereo human detection -->
+      <article class="card">
+        <h3>Emberszámlálás sztereó videóból</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Mélytérkép</span><span class="chip">Tracking</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> Belépő személyek számlálása bevásárlóközpontnál.</p>
+          <p><span class="label">Hogyan:</span> Mélységtérkép előállítás, magasság szerinti szeletelés, középpont-detektálás és mozgáskövetés; 15 paraméter interaktív csúszkákkal.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Paraméterhangolás automatizálása ML-lel, objektumdetekció integrálása.</p>
+        </div>
+      </article>
+
+      <!-- Drone ROS2 -->
+      <article class="card">
+        <h3>Drónvezérlés ROS2-vel</h3>
+        <div class="chips">
+          <span class="chip">ROS2</span><span class="chip">PID</span><span class="chip">C++/Python</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> Stabil lebegés és magasságszabályozás.</p>
+          <p><span class="label">Hogyan:</span> 4× PID (roll, pitch, yaw, altitude), motorfordulat közvetlen szabályozása; koordináta-alapú navigáció prototípus.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Adaptív/ML-alapú auto-tuning és robusztus autonóm módok.</p>
+        </div>
+      </article>
+
+      <!-- Chess webapp -->
+      <article class="card">
+        <h3>Multiplayer sakk webapp (.NET MVC + SignalR)</h3>
+        <div class="chips">
+          <span class="chip">.NET MVC</span><span class="chip">SignalR</span><span class="chip">Render hosting</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> Online sakk több játékmóddal és szobakezeléssel.</p>
+          <p><span class="label">Hogyan:</span> Szerveroldali lépésvalidáció az egyszerű csalások ellen; több játékmód; hosztolás Renderen.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Új módok, hibajavítás (Foggy, Ability), UI/UX finomítás.</p>
+        </div>
+      </article>
+
+      <!-- 3D drawing -->
+      <article class="card">
+        <h3>3D rajzolás objektumkövetéssel</h3>
+        <div class="chips">
+          <span class="chip">Unity</span><span class="chip">OpenCV</span><span class="chip">HoughCircles</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> Valós idejű 3D rajzolóalkalmazás webkamerával.</p>
+          <p><span class="label">Hogyan:</span> Gömbvégű „ceruza” követése Hough-körökkel; mélység a kör méretéből; LineRenderer-rel rajzolás.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> Robusztusabb követés HSV színtérre váltással, fényviszonyok ellen.</p>
+        </div>
+      </article>
+
+      <!-- ML library -->
+      <article class="card">
+        <h3>Machine Learning könyvtár (saját fejlesztés)</h3>
+        <div class="chips">
+          <span class="chip">NumPy</span><span class="chip">NNT</span><span class="chip">SGD</span>
+        </div>
+        <div class="trio">
+          <p><span class="label">Mit:</span> Egyedi ML könyvtár alapjai.</p>
+          <p><span class="label">Hogyan:</span> Előre-/visszaterjesztés, aktivációk, SGD; moduláris rétegek.</p>
+          <p><span class="label">Jövőbeli fejlesztések:</span> CNN/RNN rétegek, haladó optimalizálók, hibakeresési eszközök.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="tovabbiak">
+    <h2>További projektek</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Orosz vicc-tematikus osztályozó</h3>
+        <p class="note">Streamlit demo: <a href="https://jokeclassifyer-zhqkmb7wohoi47lvhonxjw.streamlit.app/" target="_blank" rel="noopener">megnyitás</a></p>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Viccek témák szerinti osztályozása.</p>
+          <p><span class="label">Hogyan:</span> Tokenizálás, BoW és vektorembedding; modellek: Naive Bayes, kNN, Random Forest, MLP; ~70% pontosság.</p>
+          <p><span class="label">Jövő:</span> Transformer-alapú nyelvi modellek bevezetése.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>LLM többcélú konzolos alkalmazás</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Automatizálható chat eszköz beépített kereséssel és hosszú szöveg összegzéssel.</p>
+          <p><span class="label">Hogyan:</span> Szöveg darabolása, párhuzamos API hívások, iteratív összegzés; CAG-alapú keresés integráció.</p>
+          <p><span class="label">Jövő:</span> Robusztus plug-in rendszer és cache-elés.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Banki batch átutalás automatizálása</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Bérkifizetések automatizálása 11 Reál üzletnél.</p>
+          <p><span class="label">Hogyan:</span> Pandas-alapú Excel parser; exportfájl generálás; heti ~3 óra → egy kattintás.</p>
+          <p><span class="label">Jövő:</span> Hibajelentés és naplózás, több bankformátum.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Nem-euklideszi 3D tér szimuláció</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Gráfalapú 3D környezet Unity-ben.</p>
+          <p><span class="label">Hogyan:</span> Logikai pozíció követése gráfon; környezet dinamikus újraépítése; láthatósági trükkök végtelen szobák nélkül.</p>
+          <p><span class="label">Jövő:</span> Játékmechanikák és teljesítmény-optimalizáció.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Rubik-kocka szimulátor</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Unity-s szimulátor, speciális kockákkal (45°-os fordítás).</p>
+          <p><span class="label">Hogyan:</span> BFS-alapú minimális lépésszám kereső; állapottér-kezelés optimalizálása folyamatban.</p>
+          <p><span class="label">Jövő:</span> Dinamikus programozás (memoizáció), gyorsabb állapotellenőrzés.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Sudoku & labirintus generátor</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Kétféle sudoku-generátor (forward/backward) + solver; 20–25 megadott számig „nehéz” rácsok.</p>
+          <p><span class="label">Hogyan:</span> Egyedi visszafejtés/előállítás; egyértelmű megoldás ellenőrzése.</p>
+          <p><span class="label">Jövő:</span> Generált példák nehézség-szabályozása, benchmarkok.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Snake ("Hungry Worm") – WPF .NET</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Többjátékos, rétegezett architektúrával; belső egyetemi versenyen díjazott.</p>
+          <p><span class="label">Hogyan:</span> Gang of Four minták, tiszta rétegezés, Git együttműködés.</p>
+          <p><span class="label">Jövő:</span> Online matchmaking, kiegyensúlyozás.</p>
+        </details>
+      </article>
+
+      <article class="card">
+        <h3>Tron x86 assembly-ben</h3>
+        <details><summary>Részletek</summary>
+          <p><span class="label">Mit:</span> Klasszikus játék újraírása alacsony szinten.</p>
+          <p><span class="label">Hogyan:</span> RGB értékek közvetlen írása videómemóriába; regiszterek és memóriamodell mélyebb megértése.</p>
+          <p><span class="label">Jövő:</span> Bemenet/ütközéskezelés optimalizálása.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <p>📧 E-mail: <a href="mailto:you@example.com">you@example.com</a> · 🔗 GitHub/Portfólió: <a href="#">link</a> · 📍 Város: [hely]
+    <br><span class="note">Tipp: ezt a szakaszt frissítsd a valódi elérhetőségeiddel és linkjeiddel.</span></p>
+  </section>
+
+  <footer>
+    <div class="small">© <span id="year"></span> Sebestyén Pál • Ez az oldal egyetlen HTML fájlban készült (könnyen szerkeszthető és hosztolható GitHub Pages-en vagy Renderen).</div>
+  </footer>
+</main>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
